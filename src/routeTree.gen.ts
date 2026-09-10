@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BolhaCalmaRouteImport } from './routes/bolha-calma'
+import { Route as JardimDasEmocoesRouteImport } from './routes/jardim-das-emocoes'
+import { Route as PausaRespiraPensaRouteImport } from './routes/pausa-respira-pensa'
+import { Route as RodaDaFalaRouteImport } from './routes/roda-da-fala'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TrilhaDaMenteRouteImport } from './routes/trilha-da-mente'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BolhaCalmaRoute = BolhaCalmaRouteImport.update({
+  id: '/bolha-calma',
+  path: '/bolha-calma',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JardimDasEmocoesRoute = JardimDasEmocoesRouteImport.update({
+  id: '/jardim-das-emocoes',
+  path: '/jardim-das-emocoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PausaRespiraPensaRoute = PausaRespiraPensaRouteImport.update({
+  id: '/pausa-respira-pensa',
+  path: '/pausa-respira-pensa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RodaDaFalaRoute = RodaDaFalaRouteImport.update({
+  id: '/roda-da-fala',
+  path: '/roda-da-fala',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrilhaDaMenteRoute = TrilhaDaMenteRouteImport.update({
+  id: '/trilha-da-mente',
+  path: '/trilha-da-mente',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/bolha-calma': typeof BolhaCalmaRoute
+  '/jardim-das-emocoes': typeof JardimDasEmocoesRoute
+  '/pausa-respira-pensa': typeof PausaRespiraPensaRoute
+  '/roda-da-fala': typeof RodaDaFalaRoute
+  '/sobre': typeof SobreRoute
+  '/trilha-da-mente': typeof TrilhaDaMenteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/bolha-calma': typeof BolhaCalmaRoute
+  '/jardim-das-emocoes': typeof JardimDasEmocoesRoute
+  '/pausa-respira-pensa': typeof PausaRespiraPensaRoute
+  '/roda-da-fala': typeof RodaDaFalaRoute
+  '/sobre': typeof SobreRoute
+  '/trilha-da-mente': typeof TrilhaDaMenteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/bolha-calma': typeof BolhaCalmaRoute
+  '/jardim-das-emocoes': typeof JardimDasEmocoesRoute
+  '/pausa-respira-pensa': typeof PausaRespiraPensaRoute
+  '/roda-da-fala': typeof RodaDaFalaRoute
+  '/sobre': typeof SobreRoute
+  '/trilha-da-mente': typeof TrilhaDaMenteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/bolha-calma'
+    | '/jardim-das-emocoes'
+    | '/pausa-respira-pensa'
+    | '/roda-da-fala'
+    | '/sobre'
+    | '/trilha-da-mente'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/bolha-calma'
+    | '/jardim-das-emocoes'
+    | '/pausa-respira-pensa'
+    | '/roda-da-fala'
+    | '/sobre'
+    | '/trilha-da-mente'
+  id:
+    | '__root__'
+    | '/'
+    | '/bolha-calma'
+    | '/jardim-das-emocoes'
+    | '/pausa-respira-pensa'
+    | '/roda-da-fala'
+    | '/sobre'
+    | '/trilha-da-mente'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BolhaCalmaRoute: typeof BolhaCalmaRoute
+  JardimDasEmocoesRoute: typeof JardimDasEmocoesRoute
+  PausaRespiraPensaRoute: typeof PausaRespiraPensaRoute
+  RodaDaFalaRoute: typeof RodaDaFalaRoute
+  SobreRoute: typeof SobreRoute
+  TrilhaDaMenteRoute: typeof TrilhaDaMenteRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/bolha-calma': {
+      id: '/bolha-calma'
+      path: '/bolha-calma'
+      fullPath: '/bolha-calma'
+      preLoaderRoute: typeof BolhaCalmaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jardim-das-emocoes': {
+      id: '/jardim-das-emocoes'
+      path: '/jardim-das-emocoes'
+      fullPath: '/jardim-das-emocoes'
+      preLoaderRoute: typeof JardimDasEmocoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pausa-respira-pensa': {
+      id: '/pausa-respira-pensa'
+      path: '/pausa-respira-pensa'
+      fullPath: '/pausa-respira-pensa'
+      preLoaderRoute: typeof PausaRespiraPensaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roda-da-fala': {
+      id: '/roda-da-fala'
+      path: '/roda-da-fala'
+      fullPath: '/roda-da-fala'
+      preLoaderRoute: typeof RodaDaFalaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trilha-da-mente': {
+      id: '/trilha-da-mente'
+      path: '/trilha-da-mente'
+      fullPath: '/trilha-da-mente'
+      preLoaderRoute: typeof TrilhaDaMenteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BolhaCalmaRoute: BolhaCalmaRoute,
+  JardimDasEmocoesRoute: JardimDasEmocoesRoute,
+  PausaRespiraPensaRoute: PausaRespiraPensaRoute,
+  RodaDaFalaRoute: RodaDaFalaRoute,
+  SobreRoute: SobreRoute,
+  TrilhaDaMenteRoute: TrilhaDaMenteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
