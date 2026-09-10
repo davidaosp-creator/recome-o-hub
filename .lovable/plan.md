@@ -33,6 +33,25 @@ Cada uma com: ícone e nome do jogo, descrição do objetivo terapêutico, aviso
 | Jardim das Emoções | /jardim-das-emocoes | Reconhecer emoções no cotidiano |
 | Trilha da Mente | /trilha-da-mente | Pensamentos difíceis com técnicas de TCC |
 
+## Melhorias adicionais
+
+### 1. Rodapé ético
+- Rodapé simples e discreto, visível na Home e em todas as páginas de jogo
+- Texto: "Recomeço é uma ferramenta de apoio à sessão terapêutica e não substitui avaliação, diagnóstico ou acompanhamento profissional."
+- Estilo: texto pequeno, cor suave acinzentada dentro da paleta, centralizado, sem competir com o conteúdo principal
+
+### 2. Identidade mínima
+- Favicon simples e abstrato (folha, espiral ou brotinho) nas cores da paleta
+- `<title>` da Home: "Recomeço"
+- `<title>` das páginas de jogo: "Recomeço — [Nome do Jogo]", via `head()` de cada rota
+
+### 3. Página "Sobre" (/sobre)
+- Nova rota `/sobre`, acessível por link no cabeçalho
+- Título "Sobre o Recomeço"
+- 3-4 frases explicando o propósito do hub: reunir jogos com base em técnicas terapêuticas reconhecidas (TCC, autocontrole, regulação emocional) para apoiar psicólogas em sessão
+- Botão "Voltar ao hub"
+- Mesmo estilo visual do resto do app
+
 ## Detalhes técnicos
 
 - TanStack Router (o roteador do projeto): um arquivo de rota por jogo em `src/routes/`, com `head()` próprio (título e descrição únicos por página, em português)
