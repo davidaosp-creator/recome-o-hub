@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { GamePlaceholder } from "@/components/GamePlaceholder";
-import { getGameBySlug } from "@/lib/games";
+import { BolhaCalma } from "@/components/games/BolhaCalma";
 
 export const Route = createFileRoute("/bolha-calma")({
   component: BolhaCalmaPage,
@@ -26,5 +25,5 @@ export const Route = createFileRoute("/bolha-calma")({
 });
 
 function BolhaCalmaPage() {
-  return <GamePlaceholder game={getGameBySlug("bolha-calma")} />;
+  return <BolhaCalma />;
 }
